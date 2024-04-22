@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Shop1</title>
+ <script src="https://unpkg.com/react@18/umd/react.development.js" defer crossorigin></script>
+ <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer crossorigin></script>
+ <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" defer crossorigin></script>
+ <style>
+    * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+    }
+  #root {
+    max-width: 106.25rem;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: lightgreen;
+    display: grid;
+    place-content: center;
+  }
+  div.div-wrapper-shop1 {
+    max-width: 31.25rem;
+    width: 100%;
+    padding: 1.25rem;
+    border: 0.1rem solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: #fff;
+  }
+  ul.ul-shop1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.625rem;
+  }
+ </style>
+</head>
+
+<body>
+ <div id="root"></div>
+
+ <script type="text/babel" data-presets="react,stage-3">
+
+    const Shop1 = () => {
+        const productCategories = ['t-shirts', 'hats', 'shorts', 'jackets', 'pants', 'shoes'];
+        
+        return (
+            <div className='div-wrapper-shop1'>
+                <h1>Product Categories</h1>
+                <ul className='ul-shop1'>
+                    {productCategories.map(category => (
+                        <li className='li-shop1' key={category}>{category}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<Shop1 />);
+ </script>
+</body>
+
+</html>
